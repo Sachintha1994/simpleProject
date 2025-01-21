@@ -1,6 +1,4 @@
-
-FROM openjdk:17-jdk-slim
-WORKDIR /app
-COPY target/simpleproject-app.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+FROM openjdk:17
+EXPOSE 8085
+ADD target/spring-boot-docker.jar spring-boot-docker.jar
+ENTRYPOINT ["java", "-jar", "/spring-boot-docker.jar"]
